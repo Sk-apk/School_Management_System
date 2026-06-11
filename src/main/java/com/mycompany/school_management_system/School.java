@@ -5,7 +5,7 @@
 package com.mycompany.school_management_system;
 
 /**
- *
+ * keeps all the schools information 
  * @author sktsh
  */
 public class School {
