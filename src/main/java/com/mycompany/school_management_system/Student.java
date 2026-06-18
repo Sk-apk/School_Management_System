@@ -30,12 +30,14 @@ public class Student {
      */
     public Student (int iD, String name, String surname, String course){
     
-        feesPaid = 0;
-        feesTotal = 20000; 
+       
         this.iD=iD;
         this.name=name;
         this.surname=surname;
         this.course=course;
+         feesPaid = 0;
+        feesTotal = 20000; 
+        
     }
     
     /**
@@ -65,10 +67,28 @@ public class Student {
     
     /**
      * 
-     * @return student course
+     * @return students course
      */
     public String getCourse() {
     return course;
+    }
+    
+
+    /**
+     * 
+     * @return fees paid by student
+     */
+    public int getFeesPaid() {
+        return feesPaid;
+    }
+
+    
+    /**
+     * 
+     * @return total fees of every student 
+     */
+    public int getFeesTotal() {
+        return feesTotal;
     }
     
     
@@ -80,5 +100,16 @@ public class Student {
     public void updateFess(int fees) {
     
         feesPaid+=fees;
+        School.updateTotalmoneYearned(feesPaid);
+    }
+    
+    
+    /**
+     * 
+     * @return the students remaining fees
+     */
+    public  int getremainingFees() {
+    return feesTotal-feesPaid;
+            
     }
 }
